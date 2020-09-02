@@ -1,4 +1,4 @@
-# 00EkZ8.github.io test
+# 00EkZ8.github.io
 <ul>
   {% for post in site.posts %}
     <li>

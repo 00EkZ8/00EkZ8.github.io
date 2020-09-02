@@ -20,17 +20,11 @@ The All Parameters portion of the output includes things like Owner, Owner Id, O
 In the UI this is located under All hosts, edit host, Additional Information. The field is named, Enabled with a check box. Checking this box will now make your host come in as enabled into AWX.
 
 
-| ![space-1.jpg](http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg) | 
-|:--:| 
-| *Space* |
-
-
 | ![disabled_host.png](/assets/disabled_host.png) | 
 |:--:| 
-| *test* |
+| [link to pic](/assets/disabled_host.png) |
 
 
-![Disabled host from Satellite]({{site.url}}/assets/disabled_host.png)
 [link to pic](/assets/disabled_host.png)
 
 Since you could have a few hundred hosts that are doing this, we'll use some hammer commands wrapped in a bash loop to resolve this.

@@ -24,6 +24,7 @@ Since you could have a few hundred hosts that are doing this, we'll use some ham
 
 
 #Hammer command to find reporting disabled host and set the status to enabled
+	
 	#!/bin/bash
 	ORG="ACME"
 	for i in $(hammer --csv host list --thin yes --organization $ORG --search status.enabled=false | grep -vi '^ID' | awk -F, {'print $1'})

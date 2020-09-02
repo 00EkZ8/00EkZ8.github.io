@@ -18,6 +18,13 @@ against a host coming in as disabled revealed this (excerpt from output):
 
 The All Parameters portion of the output includes things like Owner, Owner Id, Owner Type, etc. with no real explination of what Enabled refers to. It refers to the setting inside Red Hat Satellite 'Include this host within Satellite reporting'.
 In the UI this is located under All hosts, edit host, Additional Information. The field is named, Enabled with a check box. Checking this box will now make your host come in as enabled into AWX.
+
+
+| ![space-1.jpg](http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg) | 
+|:--:| 
+| *Space* |
+
+
 | ![disabled_host.png](/assets/disabled_host.png) | 
 |:--:| 
 | *test* |

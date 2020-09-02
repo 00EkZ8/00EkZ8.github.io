@@ -3,14 +3,14 @@ layout: default
 title:  "AWX Satellite Inventory Issue"
 ---
 
-While getting dynamic inventory setup for AWX i started having issues with some hosts randomly coming in as disbaled.(Screenshot below)
-Since this was close to 1000 hosts enabling them manually wasn't really an option, including the fact on next sync they were coming in as disabled again.
-The hosts all looked the same on the Red Hat Satellite UI. I tested editing the owner of the satellite object , the permissions of my sync and a multitude of other things, user none of which fixed the issue. 
-Running the hammer command below against a host coming in as disabled
+While getting dynamic inventory setup for AWX I started having issues with some hosts randomly coming in as disbaled.  (Screenshot below)
+Since this was close to 1000 hosts enabling them manually wasn't really an option, including the fact on next sync they would come in as disabled again.
+The hosts all looked the same on the Red Hat Satellite UI. I tested editing the owner of the satellite object , the permissions of my sync user, and a multitude of other things, none of which fixed the issue. 
+Running the hammer command below
 
 	hammer host info --id 123
 
-revealed this:
+against a host coming in as disabled revealed this (excerpt from output):
  
 		Parameters:
 	All Parameters:
@@ -24,7 +24,7 @@ Since you could have a few hundred hosts that are doing this, we'll use some ham
 [link to pic](/assets/disabled_host.png)
 
 
-#Hammer command to find reporting disabled host and set the status to enabled
+# Hammer command to find reporting disabled host and set the status to enabled
 	
 	#!/bin/bash
 	ORG="ACME"

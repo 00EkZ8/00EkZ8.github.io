@@ -5,7 +5,7 @@ title:  "AWX Satellite Inventory Issue"
 
 #Hammer command to find reporting disabled host and set the status to enabled
 
-![Disabled host from Satellite](/assets/disabled_host.png)
+![Disabled host from Satellite]({{site.url}}/assets/disabled_host.png)
 [link to pic](/assets/disabled_host.png)
 
 `	#!/bin/bash

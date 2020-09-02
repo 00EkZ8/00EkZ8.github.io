@@ -1,4 +1,7 @@
  00EkZ8.github.io
+---
+layout: default
+---
 <ul>
   {% for post in site.posts %}
     <li>

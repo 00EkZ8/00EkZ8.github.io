@@ -5,10 +5,10 @@ title:  "AWX Satellite Inventory Issue"
 
 #Hammer command to find reporting disabled host and set the status to enabled
 
-![Disabled host from Satellite](/assets/disabled_host.png){:class="img-responsive"}
+![Disabled host from Satellite](/assets/disabled_host.png =250x)
 [link to pic](/assets/disabled_host.png)
 
-`	#!/bin/bash
+	#!/bin/bash
 	ORG="ACME"
 	for i in $(hammer --csv host list --thin yes --organization $ORG --search status.enabled=false | grep -vi '^ID' | awk -F, {'print $1'})
 
@@ -16,6 +16,5 @@ title:  "AWX Satellite Inventory Issue"
 
         hammer host update --id ${1} --enabled true
 
-	done`
-
+	done
 

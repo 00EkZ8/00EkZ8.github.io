@@ -2,6 +2,7 @@
 layout: default
 title:  "AWX Satellite Inventory Issue"
 ---
+## Resolving AWX Dynamic Inventory hosts coming in disabled from Red Hat Satellite
 
 While getting dynamic inventory setup for AWX I started having issues with some hosts randomly coming in as disbaled.  (Screenshot below)
 Since this was close to 1000 hosts enabling them manually wasn't really an option, including the fact on next sync they would come in as disabled again.

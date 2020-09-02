@@ -1,6 +1,6 @@
 ---
 permalink: /:categories/:year/:month/:day/:title:output_ext/:index
- ---
+---
 title: /dev/random
 show_downloads: false
 theme: jekyll-theme-midnight

@@ -25,6 +25,7 @@ In the UI this is located under All hosts, edit host, Additional Information. Th
 | [link to pic](/assets/disabled_host.png) |
 
 
+![alt-text] ({{site.url}}/assets/disabled_host.png)?
 
 Since you could have a few hundred hosts that are doing this, we'll use some hammer commands wrapped in a bash loop to resolve this.
 

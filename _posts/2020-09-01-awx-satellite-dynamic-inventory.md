@@ -10,7 +10,8 @@ Running the hammer command below against a host coming in as disabled
 
 	hammer host info --id 123
 
-revealed this 
+revealed this:
+ 
 		Parameters:
 	All Parameters:
 		Enabeld: no
@@ -28,10 +29,7 @@ Since you could have a few hundred hosts that are doing this, we'll use some ham
 	#!/bin/bash
 	ORG="ACME"
 	for i in $(hammer --csv host list --thin yes --organization $ORG --search status.enabled=false | grep -vi '^ID' | awk -F, {'print $1'})
-
 	do
-
         hammer host update --id ${1} --enabled true
-
 	done
 

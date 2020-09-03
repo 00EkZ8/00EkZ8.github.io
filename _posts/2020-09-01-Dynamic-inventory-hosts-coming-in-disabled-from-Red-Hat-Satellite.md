@@ -1,4 +1,5 @@
 ---
+date: 2020-09-01
 ---
 
 While getting dynamic inventory setup for AWX I started having issues with some hosts randomly coming in as disbaled.  (Screenshot below)

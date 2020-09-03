@@ -2,3 +2,5 @@ title: /dev/random
 show_downloads: false
 theme: jekyll-theme-midnight
 url: https://00ekz8.github.io
+
+<a href="{{ nav.url }}" target="_blank">{{ nav.name }}</a>

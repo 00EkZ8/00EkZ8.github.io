@@ -22,8 +22,8 @@ against a host showing as disabled in the AWX inventory revealed this (excerpt f
 
 On an enabled hosts this setting was Enabled: yes
 
-The `All Parameters` portion of the output includes things like Owner, Owner Id, Owner Type, etc. with no real explination of what Enabled refers to. It refers to the setting inside Red Hat Satellite 'Include this host within Satellite reporting'.
-In the Satellite UI this is located under All hosts, edit host, Additional Information. The field is named,'Enabled' with a check box. Checking this box will now make your host come in as enabled into AWX.
+The `All Parameters` portion of the output includes things like Owner, Owner Id, Owner Type, etc. with no real explination of what `Enabled` refers to. It refers to the setting inside Red Hat Satellite `Include this host within Satellite reporting`.
+In the Satellite UI this is located under All hosts, edit host, Additional Information. The option is named, `Enabled` with a check box. Checking this box will now make your host come in as enabled into AWX.
 
 
 That is probably fine for one or two, since you could have a few hundred hosts with this issue, we'll use some hammer commands wrapped in a bash loop to resolve this and make sure we get them all. The script below will allow you to make the change based on a Red Hat Satellite organization.

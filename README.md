@@ -2,7 +2,8 @@ Post  :
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}{{ page.date | date_to_string }}</a>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ site.github.owner_name }}
     </li>
   {% endfor %}
 </ul>

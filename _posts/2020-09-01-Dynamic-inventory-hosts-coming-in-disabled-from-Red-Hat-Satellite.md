@@ -2,31 +2,32 @@
 date: 2020-09-01
 ---
 
-While getting dynamic inventory setup for AWX I started having issues with some hosts randomly coming in as disbaled.  (Screenshot below)
-Since this was close to 1000 hosts enabling them manually wasn't really an option, including the fact on next sync they would come in as disabled again.
-The hosts all looked the same on the Red Hat Satellite UI. I tested editing the owner of the satellite object , the permissions of my sync user, and a multitude of other things, none of which fixed the issue. 
-Running the hammer command below
-
-	hammer host info --id 123
-
-against a host coming in as disabled revealed this (excerpt from output):
- 
-		Parameters:
-	All Parameters:
-		Enabled: no
-
-The All Parameters portion of the output includes things like Owner, Owner Id, Owner Type, etc. with no real explination of what Enabled refers to. It refers to the setting inside Red Hat Satellite 'Include this host within Satellite reporting'.
-In the UI this is located under All hosts, edit host, Additional Information. The field is named, Enabled with a check box. Checking this box will now make your host come in as enabled into AWX.
-
+Setting up dynamic inventory for AWX I started having issues with hosts coming in as disabled.  (Screenshot below)
 
 | ![disabled_host.png](/assets/disabled_host.png) | 
 |:--:| 
 | [Enlarge](/assets/disabled_host.png) |
 
+Since this was multiple hundreds of hosts, across multiple locations and organizations, enabling them manually wasn't really an option. To to mention on next sync they would come in as disabled again.
+The hosts all looked the same on the Red Hat Satellite UI at first glace. I tested editing the owner of the satellite object , the permissions of my sync user, and a multitude of other things while troubleshooting, none of which fixed the issue. 
+Running the hammer command below
 
-Since you could have a few hundred hosts that are doing this, we'll use some hammer commands wrapped in a bash loop to resolve this.
+	hammer host info --id 123
 
-Hammer command to find reporting disabled host and set the status to enabled
+against a host showing as disabled in the AWX inventory revealed this (excerpt from output):
+ 
+		Parameters:
+	All Parameters:
+		Enabled: no
+
+On an enabled hosts this setting was Enabled: yes
+
+The All Parameters portion of the output includes things like Owner, Owner Id, Owner Type, etc. with no real explination of what Enabled refers to. It refers to the setting inside Red Hat Satellite 'Include this host within Satellite reporting'.
+In the Satellite UI this is located under All hosts, edit host, Additional Information. The field is named,'Enabled' with a check box. Checking this box will now make your host come in as enabled into AWX.
+
+
+That is probably fine for one or two, since you could have a few hundred hosts with this issue, we'll use some hammer commands wrapped in a bash loop to resolve this and make sure we get them all. The script below will allow you to make the change based on a Red Hat Satellite organization.
+
 	
 	#!/bin/bash
 	ORG="ACME"
@@ -34,4 +35,5 @@ Hammer command to find reporting disabled host and set the status to enabled
 	do
         hammer host update --id ${1} --enabled true
 	done
+Hammer command to find reporting disabled host and set the status to enabled
 

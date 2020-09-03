@@ -23,7 +23,7 @@ In the UI this is located under All hosts, edit host, Additional Information. Th
 
 | ![disabled_host.png](/assets/disabled_host.png) | 
 |:--:| 
-| [link to pic](/assets/disabled_host.png) |
+| [Enlarge](/assets/disabled_host.png) |
 
 
 Since you could have a few hundred hosts that are doing this, we'll use some hammer commands wrapped in a bash loop to resolve this.

@@ -5,7 +5,7 @@ Post  :
       <a href="{{ post.url }}">{{ post.title }}</a>
 
      {{ post.date | date_to_string }}
-   <!--  {{ post.excerpt }} -->
+     {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>

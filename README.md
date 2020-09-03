@@ -3,7 +3,8 @@ Post  :
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
-     {{ page.date | date_to_string }}
+     {{ post.date | date_to_string }}
+     {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>

@@ -36,5 +36,5 @@ That is probably fine for one or two, since you could have a few hundred hosts w
         hammer host update --id ${1} --enabled true
 	done
 
-* Hammer command to find reporting disabled host and set the status to enabled*
+*Hammer command to find reporting disabled host and set the status to enabled*
 

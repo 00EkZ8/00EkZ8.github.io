@@ -33,7 +33,7 @@ That is probably fine for one or two, since you could have a few hundred hosts w
 	ORG="ACME"
 	for i in $(hammer --csv host list --thin yes --organization $ORG --search status.enabled=false | grep -vi '^ID' | awk -F, {'print $1'})
 	do
-        hammer host update --id ${1} --enabled true
+        hammer host update --id ${i} --enabled true
 	done
 
 *Hammer command to find reporting disabled host and set the status to enabled*

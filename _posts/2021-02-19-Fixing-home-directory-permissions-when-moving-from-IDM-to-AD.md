@@ -13,11 +13,13 @@ Since our IDM usernames mostly matched the usernames that would be created in Ac
     
     - name: Changing homedir permissions for IDM to AD
       ansible.builtin.file:
-        path: "/home/\{{ item  \}}"
-        owner: "\{{ item  \}}"
+        {% raw %}
+        path: "/home/{{ item  }}"
+        owner: "{{ item  }}"
         group: "domain users"
         recurse: yes
-      with_items: "\{{ homedirs.stdout_lines  \}}"
+      with_items: "{{ homedirs.stdout_lines  }}"
       when:
         - 'item != "localuser1"
         - 'item != "localuser2"
+        {% endraw %}
